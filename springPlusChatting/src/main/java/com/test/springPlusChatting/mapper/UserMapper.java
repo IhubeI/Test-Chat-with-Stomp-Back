@@ -4,9 +4,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Service;
 
 import com.test.springPlusChatting.dto.UserDto;
 
+@Service
 public class UserMapper implements RowMapper<UserDto> {
 
 	@Override
