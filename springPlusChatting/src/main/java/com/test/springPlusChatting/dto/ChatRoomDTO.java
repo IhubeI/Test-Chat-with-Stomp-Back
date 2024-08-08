@@ -13,8 +13,8 @@ import lombok.Setter;
 @Setter
 public class ChatRoomDTO {
 
-	private String roomId;
-    private String name;
+	private String roomId; // 채팅방 번호
+    private String name; // 채팅 보낸사람 이름
     private Set<WebSocketSession> sessions = new HashSet<>();
     //WebSocketSession은 Spring에서 Websocket Connection이 맺어진 세션
 

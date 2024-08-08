@@ -19,17 +19,25 @@ public class UserDao {
 	private UserMapper userMapper;
 
 	
-	//예시
+	//회원등록
+	public void insert(UserDto userDto) {
+		String sql = "INSERT INTO tb_userInfo() values()";
+		Object[] data = {};
+		jdbcTemplate.update(sql, data);
+	}
+	
+	//회원목록
 	public List<UserDto> selectList() {
 		String sql = "SELECT * FROM tb_userInfo";
 		return jdbcTemplate.query(sql, userMapper);
 	}
 	
 	
-	//예시
-	public List<UserDto> selectOne(Long id) {
-		String sql = "SELECT * FROM tb_userInfo WHERE loginID = ?";
-		Object[] data = { id };
-		return jdbcTemplate.query(sql, userMapper, data);
+	//회원상세
+	public UserDto selectOne(String loginId) {
+		String sql = "SELECT * FROM tb_userInfo WHERE loginId = ?";
+		Object[] data = { loginId };
+		List<UserDto> list = jdbcTemplate.query(sql, userMapper, data);
+		return list.isEmpty() ? null : list.get(0);
 	}
 }

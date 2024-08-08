@@ -1,7 +1,9 @@
 package com.test.springPlusChatting.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 
 @Controller
@@ -10,7 +12,8 @@ public class HomeController {
 	
 	
 	@RequestMapping("/")//가장 짧은 주소
-	public String home(){
+	public String home(Model model, @RequestParam(required = false) String column,
+			@RequestParam(required = false) String keyword){
 		return "/WEB-INF/views/home.jsp";
 	}
 	
