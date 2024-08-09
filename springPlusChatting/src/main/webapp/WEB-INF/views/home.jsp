@@ -39,7 +39,7 @@
 			<tbody>
 				<c:forEach var="dto" items="${list}">
 					<tr>
-						<td><a href="${dto.loginId}" >${dto.loginId}</a></td>
+						<td><a href="/chat/room?roomId=${sessionScope.loginId}:${dto.loginId}" >${dto.loginId}</a></td>
 						<td>${dto.name}</td>
 						<td>${dto.userType}</td>
 						<td>${dto.empHp}</td>
