@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 
@@ -31,7 +31,10 @@ public class UserController {
 	
 	@PostMapping("/join")
 	public String join(@ModelAttribute UserDto userDto) {
-		return "redirect:/";
+		
+		userDao.insert(userDto);
+		
+		return "redirect:/hello";
 	}
 	
 	@GetMapping("/login")
@@ -51,8 +54,17 @@ public class UserController {
 			return "redirect:login?error";
 		
 		session.setAttribute("loginId", loginId);
+		session.setAttribute("userType", userDto.getUserType());
 //		session.setAttribute("createdLevel", memberDto.getMemberLevel());
 		return "redirect:/";// 홈으로 이동
+	}
+	
+	@RequestMapping("/logout")
+	public String logout(HttpSession session) {
+		session.removeAttribute("loginId");
+		session.removeAttribute("userType");
+		// session.invalidate();//세션 만료(소멸) 명령 - 권장하지 않음
+		return "redirect:/";
 	}
 	
 	

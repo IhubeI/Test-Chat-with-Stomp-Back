@@ -22,13 +22,18 @@ public class UserDao {
 	//회원등록
 	public void insert(UserDto userDto) {
 		String sql = "INSERT INTO tb_userInfo("
-				+ "loginID, user_type, name, "
+				+ "loginID, name, "
 				+ "password, emp_gender, emp_hp, "
 				+ "emp_email, emp_birth, emp_yr_sal, "
-				+ "emp_sdate, emp_work_yn, "
+				+ "emp_sdate, "
 				+ "emp_zip, emp_addr, emp_dt_addr, "
-				+ "file_no ) values(?, N, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-		Object[] data = {userDto.getLoginId(), userDto.getPassword(), };
+				+ "file_no ) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+		Object[] data = {userDto.getLoginId(), userDto.getName(),
+				userDto.getPassword(), userDto.getEmpGender(), userDto.getEmpHp(),
+				userDto.getEmpEmail(), userDto.getEmpBirth(), userDto.getEmpYrSal(),
+				userDto.getEmpSdate(), 
+				userDto.getEmpZip(), userDto.getEmpAddr(), userDto.getEmpDtAddr(),
+				userDto.getFileNo()};
 		jdbcTemplate.update(sql, data);
 	}
 	

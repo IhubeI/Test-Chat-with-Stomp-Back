@@ -20,6 +20,10 @@
 				<label>비밀번호</label> <input type="password" name="password">
 			</div>
 			<div>
+				<label>성별</label>
+				<input type="text" name="emp_gender">
+			</div>
+			<div>
 				<label>이름</label> <input type="text" name="name">
 			</div>
 			<div>
@@ -43,6 +47,7 @@
 			<div>
 				<button>가입하기</button>
 			</div>
+			<!-- 카카오 맵 -->
 			<div id="map" style="width: 500px; height: 400px;"></div>
 			<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=01567116f8db302b5c4b7de53cc8d893"></script>
 			<script>
@@ -54,6 +59,7 @@
 
 				var map = new kakao.maps.Map(container, options);
 			</script>
+			<!-- 여기까지 -->
 		</div>
 	</form>
 </body>

@@ -5,6 +5,7 @@ import org.springframework.messaging.simp.config.MessageBrokerRegistry;
 import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBroker;
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
+import org.springframework.web.socket.server.support.HttpSessionHandshakeInterceptor;
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -15,9 +16,12 @@ public class StompWebSocketConfig implements WebSocketMessageBrokerConfigurer {
 		// the url is for Websocket handshake
 		registry.addEndpoint("/stomp/chat") // handshake가 될 endpoint지정
 				.setAllowedOriginPatterns("*") // 현재 구동되고 있는 서버와 다른 도메인에서도 접근 가능하게
+				.addInterceptors(new HttpSessionHandshakeInterceptor())
 				.withSockJS(); // SockJS사용
 	}
 
+	
+	
 	@Override
 	public void configureMessageBroker(MessageBrokerRegistry registry) {
 

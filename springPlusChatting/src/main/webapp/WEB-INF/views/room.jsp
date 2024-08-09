@@ -12,7 +12,7 @@
         $(document).ready(function() {
             var roomName = "${room.name}";
             var roomId = "${room.roomId}";
-            var username = "${username}";
+            var username = "${loginId}";  // 여기서 username을 loginId로 수정합니다.
 
             console.log(roomName + ", " + roomId + ", " + username);
 
