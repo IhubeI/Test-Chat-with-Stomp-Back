@@ -29,6 +29,9 @@ public class UserMapper implements RowMapper<UserDto> {
         userDto.setEmpAddr(rs.getString("emp_addr"));
         userDto.setEmpDtAddr(rs.getString("emp_dt_addr"));
         userDto.setFileNo(rs.getInt("file_no"));
+        //추가
+        userDto.setAnnualLeaveQuota(rs.getInt("annualLeaveQuota"));
+        userDto.setAnnualLeaveUsed(rs.getInt("annualLeaveUsed"));
 
 		return userDto;
 	}

@@ -20,4 +20,7 @@ public class UserDto {
     private String empAddr; // emp_addr
     private String empDtAddr; // emp_dt_addr
     private int fileNo; // file_no
+    //추가
+    private int annualLeaveQuota; // annualLeaveQuota
+    private int annualLeaveUsed; // annualLeaveUsed
 }
