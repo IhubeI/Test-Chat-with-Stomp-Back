@@ -35,7 +35,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="./notic.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="./sidebar.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="./vacation.css"> -->
-    <link rel="stylesheet" type="text/css" href="./alertBtn.css">
+	<link rel="stylesheet" type="text/css" href="/css/alertA.css">
+	<link rel="stylesheet" type="text/css" href="/css/alertBtn.css">
    <style>
 
 

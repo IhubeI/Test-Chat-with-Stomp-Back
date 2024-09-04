@@ -373,8 +373,14 @@
             });
             // 닫기 버튼 클릭 시 모달 닫기
             $('.close').click(function () {
-                $('#myModal2').hide();
+                $('#myModal').hide();
             });
+			
+			// Sign in 링크 클릭 시 모달 닫기
+			    $('#close').click(function (event) {
+			        event.preventDefault(); // 링크의 기본 동작 방지
+			        $('#myModal').hide(); // 모달2 숨기기 (필요시)
+			    });
             // 모달 외부 클릭 시 닫기 방지
             $(window).click(function (event) {
                 // 외부 클릭 시 모달이 닫히지 않도록 주석 처리
@@ -529,7 +535,7 @@
             </label>
 
             <button class="submit1" type="submit">Submit</button>
-            <p class="signin1">Already have an account ? <a href="#">Sign in</a> </p>
+            <p class="signin1">Already have an account ? <a id="close" href="#">Sign in</a> </p>
         </form>
 
     </div>

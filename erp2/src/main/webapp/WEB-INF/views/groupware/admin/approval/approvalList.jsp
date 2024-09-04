@@ -29,7 +29,6 @@
     <!-- <link rel="stylesheet" type="text/css" href="./myStatus.css"> -->
     <!-- <link rel="stylesheet" type="text/css" href="./commons1.css"> -->
 
-
     <style>
         .btn-write {
             background-color: #99c2ff !important;
@@ -73,6 +72,9 @@
     <script src="/js/menuToggle.js"></script>
     <!-- chart js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+	
+	<!-- SweetAlert2 CDN -->
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 
@@ -126,8 +128,8 @@
 
 
             <!-- 사이드바-->
-			<div class="row">
-				<ul class="menu-hover-fill">
+			<div class="row" style="display:initial !important;">
+				<ul class="menu-hover-fill" style="display:initial !important;">
 					<li><a href="/home" data-text="home"> <i class="fa-solid fa-house-user"></i> HOME
 					</a></li>
 

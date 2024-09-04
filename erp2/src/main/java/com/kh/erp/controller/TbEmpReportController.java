@@ -126,12 +126,11 @@ public class TbEmpReportController {
 	@RequestMapping("/mylist")
 	public String list(HttpSession session, @RequestParam String loginId, Model model, @ModelAttribute PageVO pageVO) {
 		String sessionloginId = (String) session.getAttribute("createdUser");
-		System.out.println(pageVO);
 		// 세션Id와 접근하려는 Id가 동일한 경우
 		if (sessionloginId.equals(loginId)) {
-			List<TbReportRecVO> list = tbEmpReportDao.selectReportLogListByPaging(pageVO);
+			List<TbReportRecVO> list = tbEmpReportDao.selectReportListByPaging(pageVO, sessionloginId);
 			model.addAttribute("list", list);
-			pageVO.setCount(tbEmpReportDao.countPageWithVO(pageVO));
+			pageVO.setCount(tbEmpReportDao.countPageWithVO(pageVO, sessionloginId));
 			return "/WEB-INF/views/groupware/report/reportList.jsp";
 		} else {
 			return "redirect:/home";
