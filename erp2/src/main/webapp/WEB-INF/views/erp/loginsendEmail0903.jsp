@@ -113,7 +113,7 @@ $(document).ready(function() {
 	    async function showAlert() {
 	        // 첫 번째 알림창
 	        await Swal.fire({
-	            title: '<span class="custom-title">이메일 발송완료</span>',
+	            title: '<span class="custom-title">이메일 발송중</span>',
 	            icon: 'success',
 	            timer: 1500, // 1.5초 후 자동으로 닫힘
 	            timerProgressBar: true,
