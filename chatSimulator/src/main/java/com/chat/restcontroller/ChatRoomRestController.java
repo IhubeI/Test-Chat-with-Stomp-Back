@@ -22,8 +22,6 @@ public class ChatRoomRestController {
         // 두 참가자의 ID를 기준으로 채팅방 조회
         ChatRoomDto chatRoomDto = chatRoomDao.getChatRoomNoByParticipants(participant1Id, participant2Id);
         
-        System.out.println(chatRoomDto);
-
         // 채팅방이 존재하지 않으면 null 반환 (프론트엔드에서 "무" 처리)
         return chatRoomDto; // 채팅방이 존재하면 반환
     }
