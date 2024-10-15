@@ -6,8 +6,8 @@
 
     <!-- 메시지 저장 -->
     <insert id="saveMessage" parameterType="com.chat.dto.MessageDto">
-        INSERT INTO chat_messages (chatroom_id, sender_id, receiver_id, message)
-        VALUES (#{chatRoomId}, #{senderId}, #{receiverId}, #{message})
+        INSERT INTO chat_messages (chatroom_id, sender_id, receiver_id, message, timestamp)
+        VALUES (#{chatRoomId}, #{senderId}, #{receiverId}, #{message}, #{timestamp})
     </insert>
 
     <!-- 메시지 조회 -->

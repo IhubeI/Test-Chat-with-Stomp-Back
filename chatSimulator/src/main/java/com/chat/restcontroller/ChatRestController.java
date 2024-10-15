@@ -1,5 +1,6 @@
 package com.chat.restcontroller;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Map;
 
@@ -32,8 +33,13 @@ public class ChatRestController {
 		String userId = (String) sessionAttributes.get("userId");
 		
 		if(userId.equals(message.getSenderId())) {
+			
+			message.setTimestamp(LocalDateTime.now());
+			
 			// 메세지 내용 저장
 			messageDao.saveMessage(message);
+			
+			
 			return message; // 또는 필요한 로직을 추가
 		}else {
 			return null;
