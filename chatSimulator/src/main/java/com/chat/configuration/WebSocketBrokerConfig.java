@@ -18,7 +18,6 @@ import org.springframework.web.socket.server.support.HttpSessionHandshakeInterce
 
 import com.chat.serivce.TokenService;
 
-import jakarta.servlet.http.Cookie;
 
 @Configuration
 @EnableWebSocketMessageBroker
@@ -58,6 +57,7 @@ public class WebSocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
 										String token = c.split("=")[1]; // accessToken 값 추출
 										// 토큰 검증
 										if (tokenService.check(token) != null) {
+											attributes.put("userId", tokenService.check(token).getUserId());  // WebSocket 세션에 저장
 											return true;
 										}
 									}
@@ -69,7 +69,6 @@ public class WebSocketBrokerConfig implements WebSocketMessageBrokerConfigurer {
 						response.setStatusCode(HttpStatus.UNAUTHORIZED);
 						return false; // 핸드쉐이크 거부
 					}
-
 				});
 	}
 }
