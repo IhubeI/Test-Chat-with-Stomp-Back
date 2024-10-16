@@ -52,7 +52,7 @@ public class ChatRestController {
     @GetMapping("/messages")
     public List<MessageDto> getMessages(@RequestParam String chatRoomId) {
     	// 채팅방 ID로 메시지 조회
-        return messageDao.getMessageByChatRoomId(chatRoomId);
+        return messageDao.getMessageByChatRoomId(chatRoomId, 1, 5);
     }
 
 }

@@ -10,6 +10,6 @@ public interface MessageDao {
     void saveMessage(MessageDto message);
 
     // 특정 채팅방의 메시지 목록 조회
-    List<MessageDto> getMessageByChatRoomId(String chatRoomId);
+    List<MessageDto> getMessageByChatRoomId(String chatRoomId, int beginRow, int endRow);
 
 }

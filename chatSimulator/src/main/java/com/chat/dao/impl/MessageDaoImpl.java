@@ -1,6 +1,8 @@
 package com.chat.dao.impl;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +23,12 @@ public class MessageDaoImpl implements MessageDao {
     }
 
     @Override
-    public List<MessageDto> getMessageByChatRoomId(String chatRoomId) {
-        return session.selectList("Message.getMessageByChatRoomId", chatRoomId);
+    public List<MessageDto> getMessageByChatRoomId(String chatRoomId, int beginRow, int endRow) {
+    	Map<String, Object> params = new HashMap<>();
+		params.put("chatRoomId", chatRoomId);
+		params.put("beginRow", beginRow);
+		params.put("endRow",  endRow);
+        return session.selectList("Message.getMessageByChatRoomId", params);
     }
 
 }
